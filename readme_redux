@@ -25,7 +25,6 @@ function reducer(state = {cnt:0}, action)
     {
         return {cnt: state.cnt + action.payload};
     }
-
     return state;
 }
 
