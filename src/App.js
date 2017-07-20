@@ -3,32 +3,63 @@ import logo from './logo.svg';
 import reduxOverview from './redux.png'
 import './App.css';
 import Test from './Test.js'
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { incCounter, userName } from './actions.js';
 
 class App extends Component {
+
+  divStyle = {
+    color: 'blue',
+    fontSize: 'x-large'
+  };
+
   render() {
     return (
-      <div >
+      <div style={this.divStyle}>
         <div >
           <img src={logo} className="App-logo" alt="logo" />
           <img src={reduxOverview} /><br />
 
         </div>
         <p>
-          Counter = {this.props.counter}
+        
+          Counter = {this.props.counter} <br />
+          <button onClick={this.props.increment}>Increment</button> <br />
+          <select onChange={this.change.bind(this)}>
+            {this.getListOfUsers()}
+          </select>
         </p>
-
       </div>
     );
   }
+  getListOfUsers() {
+    let userList = ["Yogi", "gaur", "Yogesh"];
+    return userList.map((el) => {
+      return (<option key={el} value={el}> {el} </option>);
+    }
+    );
+  }
+  change(event) {
+    this.props.userName(event.target.value);
+  }
+
 }
 
 //export default App;
 
 function mapStateToProps(state) {
   return {
-    counter: state.cnt
+    counter: state.cnt,
+    userName: state.user
   }
 }
 
-export default connect(mapStateToProps)(App);
+function matchDispatchToProps(dispatch) {
+  return bindActionCreators({
+    increment: incCounter,
+    userName: userName
+  }, dispatch);
+}
+
+export default connect(mapStateToProps, matchDispatchToProps)(App);

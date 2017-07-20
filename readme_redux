@@ -52,3 +52,31 @@ function mapStateToProps(state){
 
 export default connect(mapStateToProps)(App);
 
+----> step 4 
+
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { incCounter, userName } from './actions.js';
+
+
+          Counter = {this.props.counter} <br />
+          <button onClick={this.props.increment}>Increment</button> <br />
+          <select onChange={this.change.bind(this)}>
+            {this.getListOfUsers()}
+          </select>
+
+function mapStateToProps(state) {
+  return {
+    counter: state.cnt,
+    userName: state.user
+  }
+}
+
+function matchDispatchToProps(dispatch) {
+  return bindActionCreators({
+    increment: incCounter,
+    userName: userName
+  }, dispatch);
+}
+
+export default connect(mapStateToProps, matchDispatchToProps)(App);
