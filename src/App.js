@@ -6,6 +6,10 @@ import Test from './Test.js'
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { incCounter, userName } from './actions.js';
+import { Link, Route } from 'react-router-dom';
+import Html from './routes/html';
+import Css from './routes/css';
+import About from './routes/about';
 
 class App extends Component {
 
@@ -19,9 +23,17 @@ class App extends Component {
       <div style={this.divStyle}>
         <div >
           <img src={logo} className="App-logo" alt="logo" />
-          <img src={reduxOverview} /><br />
+        <nav>
+<Link to='/html'> HTML </Link> |
+<Link to='/css'> CSS </Link> |
+<Link to='/about'> About </Link> |
+</nav>
 
+<Route path='/html' component={Html}/> 
+<Route path='/css' component={Css}/> 
+<Route path='/about' component={About}/> 
         </div>
+       
         <p>
         
           Counter = {this.props.counter} <br />
