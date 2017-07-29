@@ -1,1 +1,19 @@
 npm i -S react-router-dom
+
+import {BrowserRouter, Switch, Route } from 'react-router-dom';
+
+<BrowserRouter>
+<Route path="/" component={App}
+</BrowserRouter>
+
+import {Link} from 'react-router-dom';
+
+<nav>
+<Link to='/html'> HTML </Link> |
+<Link to='/css'> CSS </Link> |
+<Link to='/about'> About </Link> |
+</nav>
+
+<Route path='/html' component={Html}> 
+<Route path='/css'> component={Css}> 
+<Route path='/about'> component={About}> 
