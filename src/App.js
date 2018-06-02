@@ -23,19 +23,19 @@ class App extends Component {
       <div style={this.divStyle}>
         <div >
           <img src={logo} className="App-logo" alt="logo" />
-        <nav>
-<Link to='/html'> HTML </Link> |
-<Link to='/css'> CSS </Link> |
-<Link to='/about'> About </Link> |
-</nav>
+          <nav>
+            <Link to='/html'> HTML </Link> |
+            <Link to='/css'> CSS </Link> |
+            <Link to='/about'> About </Link> |
+          </nav>
 
-<Route path='/html' component={Html}/> 
-<Route path='/css' component={Css}/> 
-<Route path='/about' component={About}/> 
+          <Route path='/html' component={Html} />
+          <Route path='/css' component={Css} />
+          <Route path='/about' component={About} />
         </div>
-       
+
         <p>
-        
+
           Counter = {this.props.counter} <br />
           <button onClick={this.props.increment}>Increment</button> <br />
           <select onChange={this.change.bind(this)}>
