@@ -1,11 +1,18 @@
 import React, { Component } from 'react';
+import Radium from 'radium';
 
 class About extends Component {
 
     h2style = {
         color: 'blue',
         fontSize: 'x-large',
-        textAlign: 'center'
+        textAlign: 'center',
+        ":hover": {
+            color: "green"
+        },
+        "@media screen and (min-width: 480px)": {
+            backgroundColor: 'yellow'
+        }
     }
 
     render() {
@@ -14,4 +21,4 @@ class About extends Component {
         );
     }
 }
-export default About;
+export default Radium(About);
