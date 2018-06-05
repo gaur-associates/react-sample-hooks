@@ -1,2 +1,7 @@
 npm install -S prop-types
 
+import PropTypes from 'prop-types';
+
+Title.propTypes = {
+    name : PropTypes.func
+}
