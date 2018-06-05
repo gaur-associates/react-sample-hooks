@@ -10,6 +10,7 @@ import { Link, Route } from 'react-router-dom';
 import Html from './routes/html';
 import Css from './routes/css';
 import About from './routes/about';
+import Title from './Title';
 
 import { StyleRoot } from 'radium';
 
@@ -23,6 +24,7 @@ class App extends Component {
   render() {
     return (
       <StyleRoot>
+        <Title name = "prop types are really useful"/>
         <div style={this.divStyle}>
           <div >
             <img src={logo} className="App-logo" alt="logo" />
