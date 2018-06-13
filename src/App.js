@@ -11,6 +11,7 @@ import Html from './routes/html';
 import Css from './routes/css';
 import About from './routes/about';
 import Title from './Title';
+import Posts from './routes/Posts';
 
 import { StyleRoot } from 'radium';
 
@@ -32,11 +33,13 @@ class App extends Component {
               <Link to='/html'> HTML </Link> |
             <Link to='/css'> CSS </Link> |
             <Link to='/about'> About </Link> |
+            <Link to='/posts'> Posts </Link> |
           </nav>
 
             <Route path='/html' component={Html} />
             <Route path='/css' component={Css} />
             <Route path='/about' component={About} />
+            <Route path='/posts' component={Posts} />
           </div>
 
           <p>
