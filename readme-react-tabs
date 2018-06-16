@@ -1,0 +1,14 @@
+npm install -S react-tabs
+
+import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+import 'react-tabs/style/react-tabs.css';
+
+
+<Tabs defaultIndex={1} onSelect={index => console.log(index)}>
+  <TabList>
+    <Tab>Title 1</Tab>
+    <Tab>Title 2</Tab>
+  </TabList>
+  <TabPanel>text for 1</TabPanel>
+  <TabPanel>text for 2</TabPanel>
+</Tabs>
