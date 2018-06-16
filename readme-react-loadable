@@ -1,0 +1,8 @@
+npm install -S react-loadable
+
+import Loadable from 'react-loadable';
+
+const LoadablePosts = Loadable({
+  loader: () => import('./routes/Posts'),
+  loading: () => {console.log('loading'); return null}
+});

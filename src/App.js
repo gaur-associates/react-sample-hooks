@@ -11,9 +11,15 @@ import Html from './routes/html';
 import Css from './routes/css';
 import About from './routes/about';
 import Title from './Title';
-import Posts from './routes/Posts';
+//import Posts from './routes/Posts';
 
 import { StyleRoot } from 'radium';
+import Loadable from 'react-loadable';
+
+const LoadablePosts = Loadable({
+  loader: () => import('./routes/Posts'),
+  loading: () => {console.log('loading'); return null}
+});
 
 class App extends Component {
 
@@ -39,7 +45,7 @@ class App extends Component {
             <Route path='/html' component={Html} />
             <Route path='/css' component={Css} />
             <Route path='/about' component={About} />
-            <Route path='/posts' component={Posts} />
+            <Route path='/posts' component={LoadablePosts} />
           </div>
 
           <p>
