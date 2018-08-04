@@ -31,7 +31,7 @@ class App extends Component {
   render() {
     return (
       <StyleRoot>
-        <Title name =  {() =>  "prop types are really useful"}/>
+        <Title name =  {() =>  "react-transition-group "}/>
         <div style={this.divStyle}>
           <div >
             <img src={logo} className="App-logo" alt="logo" />
