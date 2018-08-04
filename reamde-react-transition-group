@@ -1,0 +1,13 @@
+npm install react-transition-group --save
+
+
+ <Transition timeout={4000} in={true} appear>
+        {(status) => (
+          <ul className={`box box-${status}`}>
+            <li >one</li>
+            <li >two</li>
+            <li >three</li>
+            <li >four</li>
+          </ul>
+        )}
+      </Transition>
