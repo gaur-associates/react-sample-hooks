@@ -2,11 +2,11 @@
     position: relative;
 }
 
-.box-entered{
+.box-enter-done{
     color: red;
 }
 
-.box-entering{
+.box-appear-active{
     animation-name: example;
     animation-duration: 4s;
 }
