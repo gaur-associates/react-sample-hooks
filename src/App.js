@@ -31,7 +31,7 @@ class App extends Component {
   render() {
     return (
       <StyleRoot>
-        <Title name =  {() =>  "react-transition-group "}/>
+        <Title name =  {() =>  "CSS grid by Gaur Associates"}/>
         <div style={this.divStyle}>
           <div >
             <img src={logo} className="App-logo" alt="logo" />
