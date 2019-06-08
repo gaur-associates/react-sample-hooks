@@ -5,7 +5,7 @@ export function incCounter() {
   };
 }
 
-export function nonThunkUserName(name) {
+export function lastUser(name) {
   return {
     type: "LAST_USER",
     payload: name
