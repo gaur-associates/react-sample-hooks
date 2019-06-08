@@ -1,23 +1,21 @@
-import React, { Component } from "react";
+import React from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { lastUser } from "./actions.js";
 import getListOfUsers from "./listOfUsers";
 
-class ChangeUser extends Component {
-  render() {
-    return (
-      <p>
-        last incremented by = {this.props.userName} <br />
-        <select onChange={this.change}>{getListOfUsers()}</select>
-      </p>
-    );
-  }
-
-  change = event => {
-    this.props.changeUserName(event.target.value);
+const ChangeUser = props => {
+  const change = event => {
+    props.changeUserName(event.target.value);
   };
-}
+
+  return (
+    <p>
+      last incremented by = {props.userName} <br />
+      <select onChange={change}>{getListOfUsers()}</select>
+    </p>
+  );
+};
 
 function mapStateToProps(state) {
   return {
