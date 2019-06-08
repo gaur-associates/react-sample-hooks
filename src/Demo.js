@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
-import { incCounter, userName } from "./actions.js";
+import { incCounter, nonThunkUserName } from "./actions.js";
 import getListOfUsers from "./listOfUsers";
 
 class Demo extends Component {
@@ -33,7 +33,7 @@ function matchDispatchToProps(dispatch) {
   return bindActionCreators(
     {
       increment: incCounter,
-      changeUserName: userName
+      changeUserName: nonThunkUserName
     },
     dispatch
   );

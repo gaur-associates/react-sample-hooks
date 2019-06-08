@@ -11,13 +11,3 @@ export function nonThunkUserName(name) {
     payload: name
   };
 }
-
-export function userName(name) {
-  return (dispatch, getState) => {
-    console.log(getState());
-
-    fetch("https://www.google.com", {
-      mode: "no-cors"
-    }).then(dispatch(nonThunkUserName(name)));
-  };
-}
