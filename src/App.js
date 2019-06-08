@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import logo from "./logo.svg";
 import "./App.css";
-import Demo from "./Demo";
+import IncButton from "./IncButton";
+import ChangeUser from "./ChangeUser";
 
 import { Link, Route } from "react-router-dom";
 import Html from "./routes/html";
@@ -46,7 +47,8 @@ class App extends Component {
             <Route path="/posts" component={LoadablePosts} />
           </div>
 
-          <Demo />
+          <IncButton />
+          <ChangeUser />
         </div>
       </StyleRoot>
     );

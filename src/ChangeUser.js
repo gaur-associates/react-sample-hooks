@@ -1,17 +1,14 @@
 import React, { Component } from "react";
-
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
-import { incCounter, lastUser } from "./actions.js";
+import { lastUser } from "./actions.js";
 import getListOfUsers from "./listOfUsers";
 
-class Demo extends Component {
+class ChangeUser extends Component {
   render() {
     return (
       <p>
-        Counter = {this.props.counter} <br />
         last incremented by = {this.props.userName} <br />
-        <button onClick={this.props.increment}>Increment</button> <br />
         <select onChange={this.change}>{getListOfUsers()}</select>
       </p>
     );
@@ -24,7 +21,6 @@ class Demo extends Component {
 
 function mapStateToProps(state) {
   return {
-    counter: state.cnt,
     userName: state.user
   };
 }
@@ -32,7 +28,6 @@ function mapStateToProps(state) {
 function matchDispatchToProps(dispatch) {
   return bindActionCreators(
     {
-      increment: incCounter,
       changeUserName: lastUser
     },
     dispatch
@@ -42,4 +37,4 @@ function matchDispatchToProps(dispatch) {
 export default connect(
   mapStateToProps,
   matchDispatchToProps
-)(Demo);
+)(ChangeUser);
