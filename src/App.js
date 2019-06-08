@@ -1,10 +1,8 @@
 import React, { Component } from "react";
 import logo from "./logo.svg";
 import "./App.css";
+import Demo from "./Demo";
 
-import { connect } from "react-redux";
-import { bindActionCreators } from "redux";
-import { incCounter, userName } from "./actions.js";
 import { Link, Route } from "react-router-dom";
 import Html from "./routes/html";
 import Css from "./routes/css";
@@ -48,53 +46,11 @@ class App extends Component {
             <Route path="/posts" component={LoadablePosts} />
           </div>
 
-          <p>
-            Counter = {this.props.counter} <br />
-            <button onClick={this.props.increment}>Increment</button> <br />
-            <select onChange={this.change.bind(this)}>
-              {this.getListOfUsers()}
-            </select>
-          </p>
+          <Demo />
         </div>
       </StyleRoot>
     );
   }
-  getListOfUsers() {
-    let userList = ["Yogi", "gaur", "Yogesh"];
-    return userList.map(el => {
-      return (
-        <option key={el} value={el}>
-          {" "}
-          {el}{" "}
-        </option>
-      );
-    });
-  }
-  change(event) {
-    this.props.userName(event.target.value);
-  }
 }
 
-//export default App;
-
-function mapStateToProps(state) {
-  return {
-    counter: state.cnt,
-    userName: state.user
-  };
-}
-
-function matchDispatchToProps(dispatch) {
-  return bindActionCreators(
-    {
-      increment: incCounter,
-      userName: userName
-    },
-    dispatch
-  );
-}
-
-export default connect(
-  mapStateToProps,
-  matchDispatchToProps
-)(App);
+export default App;
