@@ -1,33 +1,15 @@
-import React from "react";
-import { connect } from "react-redux";
-import { bindActionCreators } from "redux";
-import { incCounter } from "./actions.js";
+import React, { useReducer, useContext } from "react";
+import { reducerCnt } from "./reducers.js";
+import MyContext from "./MyContext";
 
-const IncButton = props => {
+const IncButton = () => {
   return (
     <p>
-      Counter = {props.counter} <br />
-      <button onClick={props.increment}>Increment</button> <br />
+      Counter = by Need to fill this in
+      <br />
+      <button onClick={() => null}>Increment</button> <br />
     </p>
   );
 };
 
-function mapStateToProps(state) {
-  return {
-    counter: state.cnt
-  };
-}
-
-function matchDispatchToProps(dispatch) {
-  return bindActionCreators(
-    {
-      increment: incCounter
-    },
-    dispatch
-  );
-}
-
-export default connect(
-  mapStateToProps,
-  matchDispatchToProps
-)(IncButton);
+export default IncButton;
