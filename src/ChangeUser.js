@@ -4,10 +4,16 @@ import MyContext from "./MyContext";
 
 const ChangeUser = () => {
   return (
-    <p>
-      last incremented by = Fix this <br />
-      <select onChange={event => null}>{getListOfUsers()}</select>
-    </p>
+    <MyContext.Consumer>
+      {({ userName, changeuserName }) => (
+        <p>
+          last incremented by = {userName} <br />
+          <select onChange={event => changeuserName(event.target.value)}>
+            {getListOfUsers()}
+          </select>
+        </p>
+      )}
+    </MyContext.Consumer>
   );
 };
 

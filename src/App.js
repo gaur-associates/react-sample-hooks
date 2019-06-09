@@ -29,29 +29,37 @@ class App extends Component {
     fontSize: "x-large"
   };
 
+  state = {
+    userName: "dummy",
+    changeuserName: name => {
+      this.setState({ userName: name });
+    }
+  };
   render() {
     return (
-      <StyleRoot>
-        <Title name={() => "React Hooks by Gaur Associates"} />
-        <div style={this.divStyle}>
-          <div>
-            <img src={logo} className="App-logo" alt="logo" />
-            <nav>
-              <Link to="/html"> HTML </Link> |<Link to="/css"> CSS </Link> |
-              <Link to="/about"> About </Link> |<Link to="/posts"> Posts </Link>{" "}
-              |
-            </nav>
+      <MyContext.Provider value={this.state}>
+        <StyleRoot>
+          <Title name={() => "React Hooks by Gaur Associates"} />
+          <div style={this.divStyle}>
+            <div>
+              <img src={logo} className="App-logo" alt="logo" />
+              <nav>
+                <Link to="/html"> HTML </Link> |<Link to="/css"> CSS </Link> |
+                <Link to="/about"> About </Link> |
+                <Link to="/posts"> Posts </Link> |
+              </nav>
 
-            <Route path="/html" component={Html} />
-            <Route path="/css" component={Css} />
-            <Route path="/about" component={About} />
-            <Route path="/posts" component={LoadablePosts} />
+              <Route path="/html" component={Html} />
+              <Route path="/css" component={Css} />
+              <Route path="/about" component={About} />
+              <Route path="/posts" component={LoadablePosts} />
+            </div>
+
+            <IncButton />
+            <ChangeUser />
           </div>
-
-          <IncButton />
-          <ChangeUser />
-        </div>
-      </StyleRoot>
+        </StyleRoot>
+      </MyContext.Provider>
     );
   }
 }

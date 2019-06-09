@@ -2,7 +2,7 @@ import React from "react";
 
 // set the defaults
 const MyContext = React.createContext({
-  userName: "en",
+  userName: "dummy",
   changeuserName: () => {}
 });
 
