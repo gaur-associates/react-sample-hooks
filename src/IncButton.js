@@ -3,11 +3,11 @@ import { reducerCnt } from "./reducers.js";
 import MyContext from "./MyContext";
 import GetList from "./GetList";
 
+let progList = ["JavaScript", "C#", "Java"];
+
 const IncButton = () => {
   let context = useContext(MyContext);
   const [counter, dispatch] = useReducer(reducerCnt);
-
-  let progList = ["JavaScript", "C#", "Java"];
 
   const myColor = { color: "green" };
   const myBar = { float: "right" };
