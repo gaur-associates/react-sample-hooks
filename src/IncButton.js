@@ -1,4 +1,4 @@
-import React, { useReducer, useContext } from "react";
+import React, { useReducer, useContext, useMemo } from "react";
 import { reducerCnt } from "./reducers.js";
 import MyContext from "./MyContext";
 import GetList from "./GetList";
@@ -12,13 +12,15 @@ const IncButton = () => {
   const myColor = { color: "green" };
   const myBar = { float: "right" };
 
+  const fn = useMemo(() => {
+    return <GetList list={progList} />;
+  }, []);
+
   return (
     <>
       <fieldset style={myColor}>
         <legend>Programming Languages</legend>
-        <select>
-          <GetList list={progList} />
-        </select>
+        <select>{fn}</select>
 
         <div style={myBar}>
           Counter = {counter} by {context.userName}
