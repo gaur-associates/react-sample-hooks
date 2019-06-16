@@ -54,7 +54,7 @@ class App extends Component {
               <Route path="/about" component={About} />
               <Route path="/posts" component={LoadablePosts} />
             </div>
-
+            <hr />
             <IncButton />
             <ChangeUser />
           </div>

@@ -1,8 +1,8 @@
 import React from "react";
 
-export default function getListOfUsers() {
-  let userList = ["Yogi", "gaur", "Yogesh"];
-  return userList.map(el => {
+export default function GetList({ list }) {
+  console.log("get list called");
+  return list.map(el => {
     return (
       <option key={el} value={el}>
         {" "}
